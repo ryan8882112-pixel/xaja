@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!Yan Aja!>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -104,7 +104,7 @@ footer{text-align:center;color:#626a7d;padding:45px 20px}
 <div class="container"><div class="qris-box">
 <h2>💳 Pembayaran QRIS</h2>
 <div class="payment-info"><div>📦 Produk: <b id="paymentProduct"></b></div><div>💰 Total: <b id="paymentTotal"></b></div></div>
-<img id="image_82943639-63b1-44ae-bd75-116bd21a9ac0.png" class="qris" src="314169.png" alt="QRIS">
+<img id="314169.png" class="qris" src="314169.png" alt="QRIS">
 <p style="color:#888">Scan QRIS menggunakan aplikasi pembayaran kamu.</p><br>
 <button class="btn green" onclick="confirmPayment()">✅ Saya Sudah Bayar</button>
 </div></div>
@@ -161,8 +161,8 @@ footer{text-align:center;color:#626a7d;padding:45px 20px}
 <div id="modal" class="modal hidden"><div class="modal-box"><h2>🎉 Transaksi Dibuat</h2><p id="modalText"></p><button class="btn" onclick="closeModal()">OK</button></div></div>
 
 <script>
-const ADMIN_USER="admin";
-const ADMIN_PASS="admin123";
+const ADMIN_USER="yan";
+const ADMIN_PASS="yan123";
 const ADMIN_WHATSAPP="6283129373923";
 
 let users=JSON.parse(localStorage.getItem("payx_users"))||[];
@@ -287,7 +287,7 @@ if(!selectedProduct||!currentUser)return;
 const id="PX"+Date.now();
 transactions.push({id,user:currentUser,product:selectedProduct.name,price:selectedProduct.price,status:"Pending",date:new Date().toLocaleString("id-ID")});
 saveAll();
-const message=`Halo Admin PayX 👋%0A%0ASaya sudah melakukan pembayaran.%0A%0A🧾 ID Transaksi: ${id}%0A👤 Username: ${currentUser}%0A📦 Produk: ${selectedProduct.name}%0A💰 Total: Rp ${format(selectedProduct.price)}%0A%0AMohon dicek dan di-ACC pembayaran saya.`;
+const message=`Halo Admin PayX 👋Saya sudah melakukan pembayaran.🧾 ID Transaksi: ${id} 👤 Username: ${currentUser} 📦 Produk: ${selectedProduct.name} 💰 Total: Rp ${format(selectedProduct.price)} Mohon dicek dan di-ACC pembayaran saya.`;
 window.open("https://wa.me/"+ADMIN_WHATSAPP+"?text="+encodeURIComponent(message),"_blank");
 document.getElementById("modalText").innerHTML=`ID Transaksi: <b>${id}</b><br><br>Status: <b>Pending</b><br><br>WhatsApp Admin sudah dibuka.`;
 document.getElementById("modal").classList.remove("hidden");
